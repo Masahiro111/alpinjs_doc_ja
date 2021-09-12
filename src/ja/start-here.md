@@ -3,11 +3,11 @@ order: 1
 title: Start Here
 ---
 
-# Start Here
+# Alpine.js を始めましょう！
 
-Create a blank HTML file somewhere on your computer with a name like: `i-love-alpine.html`
+まずは、`i-love-alpine.html`という名前で、空のHTMLファイルを作成します。
 
-Using a text editor, fill the file with these contents:
+テキストエディタを使用して、ファイルに以下の内容を入力します。
 
 ```alpine
 <html>
@@ -20,9 +20,10 @@ Using a text editor, fill the file with these contents:
 </html>
 ```
 
-Open your file in a web browser, if you see `I ❤️ Alpine`, you're ready to rumble!
+Webブラウザーで保存したファイルを開いてみましょう。`I ❤️ Alpine`と表示されていれば大丈夫です！
 
-Now that you're all set up to play around, let's look at three practical examples as a foundation for teaching you the basics of Alpine. By the end of this exercise, you should be more than equipped to start building stuff on your own. Let's goooooo.
+準備が整ったので、アルパインの基本を教えるための基礎として、3つの実用的な例を見てみましょう。この演習の終わりまでに、あなたは自分でものを作り始める準備ができているはずです。それでは、レッツゴー！
+
 
 <!-- START_VERBATIM -->
 <ul class="flex flex-col space-y-2 list-inside !list-decimal">
