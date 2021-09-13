@@ -27,18 +27,18 @@ Webブラウザーで保存したファイルを開いてみましょう。`I �
 
 <!-- START_VERBATIM -->
 <ul class="flex flex-col space-y-2 list-inside !list-decimal">
-    <li><a href="#building-a-counter">Building a counter</a></li>
-    <li><a href="#building-a-dropdown">Building a dropdown</a></li>
-    <li><a href="#building-a-search-input">Building a search Input</a></li>
+    <li><a href="#building-a-counter">カウンターを作る</a></li>
+    <li><a href="#building-a-dropdown">ドロップダウンの作成</a></li>
+    <li><a href="#building-a-search-input">検索入力の作成</a></li>
 </ul>
 <!-- END_VERBATIM -->
 
 <a name="building-a-counter"></a>
-## Building a counter
+## カウンターを作る
 
-Let's start with a simple "counter" component to demonstrate the basics of state and event listening in Alpine, two core features.
+簡単な「カウンター」コンポーネントから始めて、2つのコア機能であるアルパインでの状態とイベントのリスニングの基本を示しましょう。
 
-Insert the following into the `<body>` tag:
+`<body>` タグに以下を挿入します。
 
 ```alpine
 <div x-data="{ count: 0 }">
@@ -57,39 +57,41 @@ Insert the following into the `<body>` tag:
 </div>
 <!-- END_VERBATIM -->
 
-Now, you can see with 3 bits of Alpine sprinkled into this HTML, we've created an interactive "counter" component.
+このHTMLに3ビットのアルパインが散りばめられていることがわかります。インタラクティブな「カウンター」コンポーネントを作成しました。
 
-Let's walk through what's happening briefly:
+何が起こっているのかを簡単に見ていきましょう。
 
 <a name="declaring-data"></a>
-### Declaring data
+### データの宣言
 
 ```alpine
 <div x-data="{ count: 0 }">
 ```
 
-Everything in Alpine starts with an `x-data` directive. Inside of `x-data`, in plain JavaScript, you declare an object of data that Alpine will track.
+アルパインのすべては `x-data` ディレクティブで始まります。内部で`x-data` は、プレーンJavaScriptで、Alpineが追跡するデータのオブジェクトを宣言します。
 
-Every property inside this object will be made available to other directives inside this HTML element. In addition, when one of these properties changes, everything that relies on it will change as well.
+このオブジェクト内のすべてのプロパティは、このHTML要素内の他のディレクティブで使用できるようになります。さらに、これらのプロパティの1つが変更されると、それに依存するすべてのものも変更されます。
 
-[→ Read more about `x-data`](/directives/data)
+[→ 詳細を読む `x-data`](/directives/data)
 
-Let's look at `x-on` and see how it can access and modify the `count` property from above:
+`x-on` がどのようにして、`count` プロパティにアクセスして変更するかを見てみましょう。
 
 <a name="listening-for-events"></a>
-### Listening for events
+### イベントのリッスン
 
 ```alpine
 <button x-on:click="count++">Increment</button>
 ```
 
-`x-on` is a directive you can use to listen for any event on an element. We're listening for a `click` event in this case, so ours looks like `x-on:click`.
-
-You can listen for other events as you'd imagine. For example, listening for a `mouseenter` event would look like this: `x-on:mouseenter`.
-
 When a `click` event happens, Alpine will call the associated JavaScript expression, `count++` in our case. As you can see, we have direct access to data declared in the `x-data` expression.
 
-> You will often see `@` instead of `x-on`. This is a shorter, friendlier syntax that many prefer. From now on, this documentation will likely use `@` instead of `x-on`.
+`x-on` は、要素のイベントをリッスンするために使用できるディレクティブです。上記の場合、clickイベントをリッスンしているので、`x-on:click` という形になります。
+
+あなたが想像するように、あなたは他のイベントを聞くことができます。たとえば、`mouseenter` イベントをリッスンするのであれば、`x-on:mouseenter` という書き方になります。
+
+この場合、`click` イベントが発生すると、Alpineは関連するJavaScript式を呼び出します（上記のケースでは`count++`になります）。ご覧のとおり、`x-data`で宣言されたデータに直接アクセスできます。
+
+> `x-on` の代わりに`@`をよく見ませんか。これは、多くの人が好む、短くて親しみやすい構文です。今後、このドキュメントでは`x-on` の 代わりに`@`を使用する可能性があります。
 
 [→ Read more about `x-on`](/directives/on)
 
